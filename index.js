@@ -31,12 +31,7 @@ function calcularNivel(vitorias, derrotas) {
 console.log("=== CALCULADORA DE PARTIDAS RANKEADAS ===\n");
 
 const vitorias = parseInt(prompt("Digite a quantidade de vitórias: ")); 
-const derrotas = parseInt(prompt("Digite a quantidade de derrotas: "));\n
-// Validando se os valores são números
-if (isNaN(vitorias) || isNaN(derrotas)) {
-  console.log("Erro: Digite valores numéricos válidos!");
-  process.exit(1);
-}
+const derrotas = parseInt(prompt("Digite a quantidade de derrotas: "));
 
 // Calculando o nível
 const resultado = calcularNivel(vitorias, derrotas);
