@@ -1,3 +1,5 @@
+const prompt = require('prompt-sync')();
+
 function calcularNivel(vitorias, derrotas) {
   const saldoVitorias = vitorias - derrotas;
   
@@ -25,15 +27,19 @@ function calcularNivel(vitorias, derrotas) {
   };
 }
 
-// Exemplos de uso
-const jogador1 = calcularNivel(5, 2);
-console.log(`O Herói tem de saldo de ${jogador1.saldoVitorias} está no nível de ${jogador1.nivel}`);
+// Capturando valores do terminal
+console.log("=== CALCULADORA DE PARTIDAS RANKEADAS ===\n");
 
-const jogador2 = calcularNivel(15, 5);
-console.log(`O Herói tem de saldo de ${jogador2.saldoVitorias} está no nível de ${jogador2.nivel}`);
+const vitorias = parseInt(prompt("Digite a quantidade de vitórias: ")); 
+const derrotas = parseInt(prompt("Digite a quantidade de derrotas: "));\n
+// Validando se os valores são números
+if (isNaN(vitorias) || isNaN(derrotas)) {
+  console.log("Erro: Digite valores numéricos válidos!");
+  process.exit(1);
+}
 
-const jogador3 = calcularNivel(75, 10);
-console.log(`O Herói tem de saldo de ${jogador3.saldoVitorias} está no nível de ${jogador3.nivel}`);
+// Calculando o nível
+const resultado = calcularNivel(vitorias, derrotas);
 
-const jogador4 = calcularNivel(120, 30);
-console.log(`O Herói tem de saldo de ${jogador4.saldoVitorias} está no nível de ${jogador4.nivel}`);
+// Exibindo o resultado
+console.log(`\nO Herói tem de saldo de ${resultado.saldoVitorias} está no nível de ${resultado.nivel}`);
